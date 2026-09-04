@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>DoceFlow | Acesse sua conta</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+  <main class="login-page">
+
+    <section class="login-container">
+
+      <div class="login-image">
+        <img
+          src="assets/images/financeControl.jpg"
+          alt=""
+        >
+      </div>
+
+      <div class="login-content">
+
+        <header class="login-header">
+          <p class="login-welcome">Bem-vindo de volta!</p>
+
+          <h1>Acesse sua conta</h1>
+
+          <p class="login-description">
+            Entre para continuar gerenciando seu negócio
+          </p>
+        </header>
+
+        <form class="login-form" action="" method="post">
+
+          <div class="form-field">
+            <label for="usuario">Usuário</label>
+
+            <input
+              type="text"
+              name="usuario"
+              id="usuario"
+              placeholder="Digite seu usuário"
+              autocomplete="username"
+            >
+          </div>
+
+          <div class="form-field">
+            <label for="password">Senha</label>
+
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Digite sua senha"
+              autocomplete="current-password"
+            >
+          </div>
+
+          <div class="login-options">
+
+            <label class="remember-me" for="lembrar">
+              <input
+                type="checkbox"
+                name="lembrar"
+                id="lembrar"
+              >
+              <span>Lembrar de mim</span>
+            </label>
+
+            <a href="#">Esqueci minha senha</a>
+
+          </div>
+
+          <button type="submit">
+            Entrar
+          </button>
+
+        </form>
+
+        <div class="login-divider">
+          <span>ou</span>
+        </div>
+
+        <div class="login-register">
+          <p>
+            Ainda não tem acesso a uma conta?
+            <a href="#">Fale com o administrador</a>
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+</body>
+</html>
