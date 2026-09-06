@@ -185,9 +185,8 @@
 }
 
 [data-error] {
-  min-height: 18px;
-  margin-top: 6px;
-
+  height: 0px;
+  margin-top: 0px;
   color: #C94C4C;
   font-size: 14px;
   font-weight: 500;
@@ -195,12 +194,14 @@
   visibility: hidden;
   opacity: 0;
 
-  transition: opacity 0.2s ease;
+  transition: opacity 0.3s ease, height 0.3s ease, margin-top 0.3s ease;
 }
 
 [data-error].active {
   visibility: visible;
   opacity: 1;
+  min-height: 18px;
+  margin-top: 6px;
 }
 
 
