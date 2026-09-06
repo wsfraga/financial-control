@@ -184,6 +184,18 @@
   transform: translateY(-1px);
 }
 
+[data-error="password"], [data-error="username"] {
+  display: none;  
+}
+
+[data-error="username"].active {
+  display: block;
+}
+
+[data-error="password"].active {
+  display: block;
+}
+
 
 /* ==============================
    OPÇÕES

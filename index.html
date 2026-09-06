@@ -41,7 +41,7 @@
           </p>
         </header>
 
-        <form class="login-form" action="" method="post">
+        <form class="login-form" action="" method="post" data-form="login">
 
           <div class="form-field">
             <label for="usuario">Usuário</label>
@@ -50,9 +50,11 @@
               type="text"
               name="usuario"
               id="usuario"
+              data-form="username"
               placeholder="Digite seu usuário"
               autocomplete="username"
             >
+            <p data-error="username"></p>
           </div>
 
           <div class="form-field">
@@ -62,9 +64,11 @@
               type="password"
               name="password"
               id="password"
+              data-form="password"
               placeholder="Digite sua senha"
               autocomplete="current-password"
             >
+            <p data-error="password"></p>
           </div>
 
           <div class="login-options">
@@ -102,7 +106,8 @@
       </div>
 
     </section>
-
   </main>
+
+  <script src="js/login.js"></script>
 </body>
 </html>
