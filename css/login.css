@@ -184,16 +184,23 @@
   transform: translateY(-1px);
 }
 
-[data-error="password"], [data-error="username"] {
-  display: none;  
+[data-error] {
+  min-height: 18px;
+  margin-top: 6px;
+
+  color: #C94C4C;
+  font-size: 14px;
+  font-weight: 500;
+
+  visibility: hidden;
+  opacity: 0;
+
+  transition: opacity 0.2s ease;
 }
 
-[data-error="username"].active {
-  display: block;
-}
-
-[data-error="password"].active {
-  display: block;
+[data-error].active {
+  visibility: visible;
+  opacity: 1;
 }
 
 
