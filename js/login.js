@@ -83,12 +83,12 @@ function authenticate(formData) {
 function renderAuthentication(authenticationResult) {
   
   if (authenticationResult.success) {
-    authenticationToastResponse.innerText = "Sucesso"
+    authenticationToastResponse.innerText = "Sucesso";
   } else {
-    authenticationToastResponse.innerText = "Erro"
+    authenticationToastResponse.innerText = "Erro";
   }
   authenticationToastMessage.innerText = authenticationResult.message
-
+  authenticationToast.classList.add('active');
 }
 
 function handleSubmit(event) {

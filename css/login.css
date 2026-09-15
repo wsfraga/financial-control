@@ -348,6 +348,52 @@
 
 
 /* ==============================
+   TOAST
+================================= */
+
+[data-toast="authentication"] {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: min(360px, calc(100% - 48px));
+  padding: 16px 20px;
+  border: 1px solid #E4DDD8;
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  box-shadow:
+    0 12px 30px rgba(74, 36, 21, 0.15);
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s ease;
+}
+
+[data-toast="authentication"].active {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-toast="response"] {
+  margin: 0;
+  color: #2D1B14;
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+[data-toast="message"] {
+  margin: 6px 0 0;
+  color: #6B6866;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+
+/* ==============================
    ANIMAÇÕES
 ================================= */
 
