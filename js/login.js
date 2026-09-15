@@ -6,6 +6,10 @@ const passwordInput = document.querySelector('[data-form="password"]');
 const passwordError = document.querySelector('[data-error="password"]');
 const usernameError = document.querySelector('[data-error="username"]');
 
+const authenticationToast = document.querySelector('[data-toast="authentication"]');
+const authenticationToastResponse = document.querySelector('[data-toast="response"]');
+const authenticationToastMessage = document.querySelector('[data-toast="message"]');
+
 function getFormData() {
 
   const formData = {
@@ -16,6 +20,7 @@ function getFormData() {
 }
 
 function validateForm(formData) {
+
   const validationResult = {
     isValid: true,
     errors: {
@@ -55,14 +60,53 @@ function renderValidation(validationResult) {
   }
 }
 
+function authenticate(formData) {
+  const user = {
+    username: "admin",
+    password: "12345678"
+  }
+
+  const authenticationResult = {
+    success: false,
+    message: "Usuário ou senha inválidos"
+  }
+
+  if ((formData.username === user.username) 
+    && (formData.password === user.password)) {
+    authenticationResult.success = true;
+    authenticationResult.message = "Login efetuado com sucesso";
+  }
+
+  return authenticationResult;
+}
+
+function renderAuthentication(authenticationResult) {
+  
+  if (authenticationResult.success) {
+    authenticationToastResponse.innerText = "Sucesso"
+  } else {
+    authenticationToastResponse.innerText = "Erro"
+  }
+  authenticationToastMessage.innerText = authenticationResult.message
+
+}
+
 function handleSubmit(event) {
+  console.clear();
   event.preventDefault();
 
   const formData = getFormData();
   
   const validationResult = validateForm(formData);
   console.log(validationResult);
+
   renderValidation(validationResult);
+
+  if (validationResult.isValid) {
+    const authenticationResult = authenticate(formData);
+    renderAuthentication(authenticationResult)
+    console.log(authenticationResult);
+  }
 }
 
 loginForm.addEventListener('submit', handleSubmit);
