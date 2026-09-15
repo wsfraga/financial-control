@@ -80,6 +80,8 @@ function authenticate(formData) {
   return authenticationResult;
 }
 
+let renderTimeAuthentication;
+
 function renderAuthentication(authenticationResult) {
   
   if (authenticationResult.success) {
@@ -89,6 +91,13 @@ function renderAuthentication(authenticationResult) {
   }
   authenticationToastMessage.innerText = authenticationResult.message
   authenticationToast.classList.add('active');
+
+  if (renderTimeAuthentication) {
+    clearTimeout(renderTimeAuthentication);
+  }
+  renderTimeAuthentication = setTimeout(() => {
+    authenticationToast.classList.remove('active');
+  }, 3000);
 }
 
 function handleSubmit(event) {
